@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user %}
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome, {{ user }}!</h1>
+    <p>This is your profile. This is a trial account, you are not premium.</p>
+    <a class="btn btn-primary btn-large" href="/upgrade">Upgrade to get a fixed address and unlimited data, among other perks.</a>
+  </div>
+</div>
+{% else %}
+Not logged in
+{% endif %}
+{% endblock %}

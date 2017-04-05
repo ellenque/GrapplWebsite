@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+
+{% block navbar %}
+<div style="width:95%; margin:0px auto;">
+<nav class = "navbar navbar-inverse">
+  <div class="container"></div>
+  <p class = "navbar-text">Application name!</p>
+  <a href = "/"  class="btn btn-default navbar-btn">Home</a>
+  <a href = "/download" class="btn btn-default navbar-btn">Download</a>
+
+  <div class="navbar-right">
+  {% if user %}
+  <p class = "navbar-text">Logged in as {{ user }}</p>
+  <a href = "/profile" class="btn btn-default navbar-btn">
+    {% if notifications %}
+    Profile <span class = "badge">{{ notifications }}</span>
+    {% else %}
+    Profile
+    {% endif %}
+  </a>
+  <a href = "/upgrade" class="btn btn-default navbar-btn">Upgrade!</a>
+  <a href = "/logout" class="btn btn-default navbar-btn">Logout</a>
+  {% else %}
+  <p class = "navbar-text">Not logged in</p>
+  <a href = "/register" class="btn btn-default navbar-btn">Register</a>
+  <a href = "/login" class="btn btn-default navbar-btn">Login</a> 
+  {% endif %}
+  </div>
+</nav>
+{% endblock %}

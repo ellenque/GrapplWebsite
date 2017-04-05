@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+<link href = "signin.css" rel="stylesheet">
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div style="width:350px; margin:0px auto; text-align:center;">
+<form action = "/login" method="POST">
+  Email: <input type = "email", name = "email"><br>
+  Password: <input type = "password" name = "password"><br>
+  <button class="btn btn-lg btn-primary btn-block"  type = "submit" style="width:50%; text-align:center;">Login</button>
+</form>
+</div>
+</div>
+{% endblock %}
